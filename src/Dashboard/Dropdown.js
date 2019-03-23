@@ -83,7 +83,7 @@ class Drop extends Component {
                         <DropdownItem>Sports</DropdownItem>
                     </DropdownMenu>
                 </Dropdown> */}
-<div style={{padding:"50px",marginRight:"800px"}}>
+<div style={{padding:"22px"}}>
 <Carousel></Carousel>
 </div>    
             </div>
