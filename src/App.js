@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
-// import SignIn from './SignIn/SignIn'
-import Header from './Dashboard/Header'
-
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Header from './Dashboard/Header';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-    {/* <SignIn></SignIn> */}
-      <Header></Header>
-      </div>
+       <BrowserRouter>
+            <div className="App">
+            <Header/>
+              
+                <Switch>
+                    {/* <Route exact path="/" component={Home}/>
+                    <Route path="/cart" component={Cart}/> */}
+                  </Switch>
+             </div>
+       </BrowserRouter>
+      
     );
   }
 }

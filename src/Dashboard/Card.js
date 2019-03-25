@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import {Card, CardText,CardTitle, CardSubtitle, Button} from 'reactstrap';
 import Add from './Add';
 
+
 class Cards extends Component {
+    
+
+    
     render() {
         return (
             <div>

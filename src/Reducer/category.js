@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    users: []
+    category: []
 }
 
 export const GET_CATEGORY = 'GET_CATEGORY';
