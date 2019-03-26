@@ -3,18 +3,18 @@ import ReactImageZoom from 'react-image-zoom';
 import './Zoom.css';
 
 const props1 = {
-    width: 400,
+    width: 520,
     scale: 1.5,
     img: 'http://www.aljanh.net/data/archive/img/2989547220.jpeg',
-    offset: {vertical: 0, horizontal: 10},
+    offset: {vertical: 0, horizontal: 50},
 };
 
 const props2 = {
-    width: 400,
-    height: 250,
+    width: 520,
+    height: 350,
     zoomWidth: 500,
     img: 'http://www.aljanh.net/data/archive/img/2989547220.jpeg',
-    offset: {vertical: 0, horizontal: 10},
+    offset: {vertical: 0, horizontal: 50},
 };
 
 const props3 = {
@@ -22,8 +22,8 @@ const props3 = {
     height: 250,
     zoomWidth: 500,
     img: 'http://www.aljanh.net/data/archive/img/2989547220.jpeg',
-    offset: {vertical: 0, horizontal: 10},
-    zoomStyle: 'opacity: 0.5;border: 1px solid black;',
+    offset: {vertical: 0, horizontal: 50},
+    zoomStyle: 'opacity: 1.20;border: 1px solid black;',
 };
 
 
@@ -32,8 +32,8 @@ const props4 = {
     height: 250,
     zoomWidth: 500,
     img: 'http://www.aljanh.net/data/archive/img/2989547220.jpeg',
-    offset: {vertical: 0, horizontal: 10},
-    zoomLensStyle: 'opacity: 0.5;background-color: gray;',
+    offset: {vertical: 0, horizontal: 50},
+    zoomLensStyle: 'opacity: 1.20;background-color: gray;',
 };
 
 
@@ -56,7 +56,7 @@ class ReactImageZoomExample extends Component {
         return (
             <div>
                 <div>
-                    <h2>{`props: ${JSON.stringify(this.state.zoomProps)}`}</h2>
+                    {/* <h2>{`props: ${JSON.stringify(this.state.zoomProps)}`}</h2> */}
                     <div style={{display: 'flex', marginBottom: 10}}>
                         <button onClick={this.setZoomProps(props1)} style={{marginRight: 10}}>
                             props1
