@@ -25,6 +25,9 @@ class Header extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+  onClick = ()=>{
+    this.props.history.push('/signin');
+  }
   render() {
     return (
       <div>
@@ -32,16 +35,16 @@ class Header extends React.Component {
 
           <NavbarBrand href="/" style={{ color: "white" }}>flipkart</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-          <Input type="search" placeholder="Search for products, brands and more" style={{ width: "450px", marginLeft: "100px" }}></Input><i class="material-icons" style={{ width: "20px", marginLeft: "-30px", color: "black" }}>search</i>
+          <Input type="search" placeholder="Search for products, brands and more" style={{ width: "450px", marginLeft: "100px" }}></Input><i className="material-icons" style={{ width: "20px", marginLeft: "-30px", color: "black" }}>search</i>
           <Nav className="ml-auto" navbar >
             <NavItem>
-              <NavLink href="/#" style={{ color: "white" }}>SignIn</NavLink>
+              <NavLink href="/signin" onClick={this.onClick}style={{ color: "white" }}>SignIn</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/#" style={{ color: "white" }}>SignUp</NavLink>
+              <NavLink href="/signup" style={{ color: "white" }}>SignUp</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/#" style={{ color: "white" }}><i class="material-icons">add_shopping_cart</i></NavLink>
+              <NavLink href="/mobile" style={{ color: "white" }}><i className="material-icons">add_shopping_cart</i></NavLink>
             </NavItem>
           </Nav>
 

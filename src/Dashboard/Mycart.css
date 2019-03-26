@@ -1,0 +1,20 @@
+.row{
+    text-align: center;
+    
+}
+table, th, td {
+   
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .col{
+    
+    margin-left: 320px;
+    
+  }
+  
+  

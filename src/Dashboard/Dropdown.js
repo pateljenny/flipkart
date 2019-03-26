@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, NavLink, Nav } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem ,NavLink} from 'reactstrap';
 
 import Carousel from './Carousel';
 
@@ -16,37 +16,32 @@ class Drop extends Component {
         };
         this.toggle = this.toggle.bind(this);
     }
-
-    
-
     toggle() {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
         }));
     }
 
-    // componentWillMount() {
-    //     const values = queryString.parse(this.props.location.search)
-    //     this.props.getCourseByCatId(values.id);
-    //     }
-    //     componentWillReceiveProps(nextProps) {
-    //     const newId = queryString.parse(nextProps.location.search).id;
-    //     const oldId = queryString.parse(this.props.location.search).id;
-    //     if (newId !== oldId) {
-    //     this.props.getCourseByCatId(newId);
-    //     }
-    //     }
-
+    componentWillMount = () => {
+        // this.props.getCategory();
+        // console.log(this.state);
+    }
+    
+    showCourseById(Cate_id) {
+        this.props.history.push(`/category/?Cate_id=${Cate_id}`)
+    }
     render() {
         
         return (
             <div className="row">
                 <Dropdown direction="down" isOpen={this.state.btnDropup} toggle={() => { this.setState({ btnDropup: !this.state.btnDropup }); }}>
-                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "100px", padding: "8px", border: "2px white" }}>
+                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "100px", padding: "8px", border: "2px white"}}>
                     Electronics
+                   
                      </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>Mobile</DropdownItem>
+                    <NavLink href="/MobileList">Mobile</NavLink>
+                        <DropdownItem> <NavLink href="/MobileList"></NavLink>Mobile</DropdownItem>
                         <DropdownItem>Laptop</DropdownItem>
                         <DropdownItem>Camera</DropdownItem>
                         <DropdownItem>Mobile Accessories</DropdownItem>

@@ -56,42 +56,42 @@ class Cards extends Component {
                 </Card> */}
 
                 <div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm">
                                 <img src="https://img0.junaroad.com/uiproducts/14862101/pri_175_p-1519291796.jpg" marginLeft="20px" alt="Snow" style={{ width: "130px", height: "140px" }} />
                                 <CardTitle><h5>Casual Shirts, Jeans</h5></CardTitle>
                                 <CardSubtitle style={{ color: "green" }}>From ₹149 + Extra 5% </CardSubtitle>
                                 <CardText>Best Collection</CardText>
                             </div>
-                            <div class="col-sm">
+                            <div className="col-sm">
                                 <img src="https://www.payless.com/on/demandware.static/-/Sites/default/dw70bbd860/images/slot/2019-SP01/2019-sp01-men-stan-right-basketball.gif" alt="Forest" style={{ width: "130px", height: "140px" }} />
                                 <CardTitle> <h5>Puma</h5></CardTitle>
                                 <CardSubtitle style={{ color: "green" }}>Upto 60%+Extra 5% Off </CardSubtitle>
                                 <CardText>Men's Footwear</CardText>
 
                             </div>
-                            <div class="col-sm">
+                            <div className="col-sm">
                             <img src="https://static-01.daraz.com.bd/original/40bb3b594663ea6f8b5c5e48d31cedbd.jpg" alt="Mountains" style={{ width: "130px", height: "140px" }} />
                             <CardTitle> <h5>Abrexo, Espoir, Timebre...</h5></CardTitle>
                             <CardSubtitle style={{ color: "green" }}>Upto70%+Extra15%Off </CardSubtitle>
                             <CardText>Watchese</CardText>
 
                             </div>
-                            <div class="col-sm">
+                            <div className="col-sm">
                                 <img src="https://uploads-ssl.webflow.com/59e7a84b511d6e0001982bfb/59ea16eb775aae00019a7738_thumbs_sony-mirrorless.jpg" alt="Mountains" style={{ width: "130px", height: "140px" }} />
                                 <CardTitle> <h5>Abrexo, Espoir, Timebre...</h5></CardTitle>
                                 <CardSubtitle style={{ color: "green" }}>Upto70%+Extra15%Off </CardSubtitle>
                                 <CardText>Watchese</CardText>
                             </div>
-                            <div class="col-sm">
+                            <div className="col-sm">
                                 <img src="https://images-na.ssl-images-amazon.com/images/I/815VefcBIpL._SL1500_.jpg" alt="Mountains" style={{ width: "130px", height: "140px" }} />
                                 <CardTitle> <h5>Abrexo, Espoir, Timebre...</h5></CardTitle>
                                 <CardSubtitle style={{ color: "green" }}>Upto70%+Extra15%Off </CardSubtitle>
                                 <CardText>Watchese</CardText>
                             </div>
 
-                            <div class="col-sm">
+                            <div className="col-sm">
                                 <img src="https://static3.nordic.pictures/1009523-thickbox_default/platinet-power-bank-20000mah-2xusb-black-grey-43111.jpg" alt="Mountains" style={{ width: "130px", height: "140px" }} />
                                 <CardTitle> <h5>Abrexo, Espoir, Timebre...</h5></CardTitle>
                                 <CardSubtitle style={{ color: "green" }}>Upto70%+Extra15%Off </CardSubtitle>
