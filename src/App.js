@@ -1,31 +1,24 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux'
-// import Header from './Dashboard/Header';
-// import MyCart from './Dashboard/MyCart';
-// import SignIn from './SignIn/SignIn';
-// import SignUp from './SignUp/SignUp';
+import './App.css';
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import Header from './Dashboard/Header'
+// import Signup from './SignUp/SignUp'
+import Login from './SignIn/SignIn'
 
-import store from './store'
-import  Zoom from './Dashboard/Zoom/Zoom';
 
-class App extends Component{
+class App extends Component {
   render() {
     return (
-      <div>
-        <Provider store={store}>
-          <Router>
-            {/* <Header /> */}
-         <Zoom></Zoom>
-            <Switch>
-              {/* <Route path='/signin' component={SignIn} />
-              <Route path='/signup' component={SignUp} />
-              <Route path='/mycart' component={MyCart} />*/}
-              {/* <Route path='/mobile' component={MobileList} />  */}
-            </Switch>
-          </Router>
-        </Provider>
-      </div>
+      <Router>
+        <div>
+          <Header></Header>
+          {/* <Route exact path="/" component={Header} /> */}
+          {/* <Route exact path="/signup" component={Signup} /> */}
+          <Route exact path="/login" component={Login} />
+          {/* <Route exact path="/dashboard" component={Header} /> */}
+
+        </div>
+      </Router>
     );
   }
 }

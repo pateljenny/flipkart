@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,Button
 } from 'reactstrap';
 
 import Droupdown from './Dropdown';
@@ -25,9 +25,10 @@ class Header extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  onClick = ()=>{
-    this.props.history.push('/signin');
+  handlesubmitAddtocart =()=>{
+    this.props.history.push('/Cart');
   }
+  
   render() {
     return (
       <div>
@@ -44,7 +45,10 @@ class Header extends React.Component {
               <NavLink href="/signup" style={{ color: "white" }}>SignUp</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/mobile" style={{ color: "white" }}><i className="material-icons">add_shopping_cart</i></NavLink>
+              <Button onClick={this.handlesubmitAddtocart}style={{ color: "white" ,backgroundColor: "#000099",border:"2px #000099"}}>
+              <i className="material-icons">add_shopping_cart</i>
+              </Button>
+              {/* <NavLink href="/mobile" style={{ color: "white" }}><i className="material-icons">add_shopping_cart</i></NavLink> */}
             </NavItem>
           </Nav>
 

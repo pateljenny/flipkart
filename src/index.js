@@ -4,12 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import cartReducer from './Reducer/cartReducer';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import store from './store';
 
-const store = createStore(cartReducer);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 

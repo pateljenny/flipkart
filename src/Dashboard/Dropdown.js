@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem ,NavLink} from 'reactstrap';
-
+import { Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
+import * as categoryAction from './../Action/category';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import Carousel from './Carousel';
 
 class Drop extends Component {
@@ -11,7 +13,7 @@ class Drop extends Component {
         this.state = {
             dropdownOpen: false,
             modal: false,
-            cate_id: 'selected',
+            category: '',
             data: ''
         };
         this.toggle = this.toggle.bind(this);
@@ -23,29 +25,27 @@ class Drop extends Component {
     }
 
     componentWillMount = () => {
-        // this.props.getCategory();
-        // console.log(this.state);
-    }
-    
-    showCourseById(Cate_id) {
-        this.props.history.push(`/category/?Cate_id=${Cate_id}`)
+      
+        this.props.action.category.getCategory();
+        console.log(this.category);
     }
     render() {
-        
         return (
             <div className="row">
                 <Dropdown direction="down" isOpen={this.state.btnDropup} toggle={() => { this.setState({ btnDropup: !this.state.btnDropup }); }}>
-                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "100px", padding: "8px", border: "2px white"}}>
-                    Electronics
-                   
+                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "100px", padding: "8px", border: "2px white" }}>
+                        Electronics
                      </DropdownToggle>
+
                     <DropdownMenu>
-                    <NavLink href="/MobileList">Mobile</NavLink>
+
+                        <h5>{this.category}</h5>
+                        {/* <NavLink href="/MobileList">Mobile</NavLink>
                         <DropdownItem> <NavLink href="/MobileList"></NavLink>Mobile</DropdownItem>
                         <DropdownItem>Laptop</DropdownItem>
                         <DropdownItem>Camera</DropdownItem>
                         <DropdownItem>Mobile Accessories</DropdownItem>
-                        <DropdownItem>Home Entertainment</DropdownItem>
+                        <DropdownItem>Home Entertainment</DropdownItem> */}
                     </DropdownMenu>
                 </Dropdown>
 
@@ -54,49 +54,22 @@ class Drop extends Component {
                         TV's Appliances
                  </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>Refigeratiors</DropdownItem>
-                        <DropdownItem>Air Conditioners</DropdownItem>
-                        <DropdownItem>Small Home Appliances</DropdownItem>
-                        <DropdownItem>Kitch Appliances</DropdownItem>
-                        <DropdownItem>WAshing Machine</DropdownItem>
+                        <h5>{this.category}</h5>
+
                     </DropdownMenu>
                 </Dropdown>
-
-                {/* <Dropdown direction="down" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
-                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black",marginLeft:"100px" ,padding:"8px",margin:"9px",border:"2px white"}}>
-                       Men
-                </DropdownToggle>
-                    <DropdownMenu>
-                        <DropdownItem>Footwear</DropdownItem>
-                        <DropdownItem>Watches</DropdownItem>
-                        <DropdownItem>Sports Wear</DropdownItem>
-                       
-                    </DropdownMenu>
-                </Dropdown> */}
 
                 <Dropdown direction="down" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
                     <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "180px", padding: "8px", border: "2px white" }}>
                         WoMen
                 </DropdownToggle>
                     <DropdownMenu>
-                        <DropdownItem>Jewellery</DropdownItem>
-                        <DropdownItem>Shoes</DropdownItem>
-                        <DropdownItem>Beauty-Grooming</DropdownItem>
+                        <h5>{this.category}</h5>
 
                     </DropdownMenu>
                 </Dropdown>
 
-                {/* <Dropdown direction="down" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
-                    <DropdownToggle caret style={{ backgroundColor: "white", color: "black",marginLeft:"100px" ,padding:"8px",margin:"9px",border:"2px white"}}>
-                     Sports,Books-More
-                </DropdownToggle>
-                    <DropdownMenu>
-                        <DropdownItem>Books</DropdownItem>
-                        <DropdownItem>Gaming</DropdownItem>
-                        <DropdownItem>Music</DropdownItem>
-                        <DropdownItem>Sports</DropdownItem>
-                    </DropdownMenu>
-                </Dropdown> */}
+
                 <div style={{ padding: "22px" }}>
                     <Carousel></Carousel>
                 </div>
@@ -105,19 +78,17 @@ class Drop extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return {
 
-//         getCategory: state.cate_id.getCategory,
-//     }
-//   };
+const mapStateToProps = (state) => {
+    return {
+            getCategory: state.category,
+    }
+};
 
-//   const mapDispatchToProps = (dispatch) => ({
-//     action: {
+const mapDispatchToProps = dispatch => ({
+    action: {
+        category: bindActionCreators(categoryAction, dispatch)
+    }
+});
 
-//       categoryAction: bindActionCreators(categoryAction, dispatch)
-//     }
-//   });
-//   export default connect(mapStateToProps, mapDispatchToProps)(Drop)
-
-export default Drop;
+export default connect(mapStateToProps, mapDispatchToProps)(Drop)
