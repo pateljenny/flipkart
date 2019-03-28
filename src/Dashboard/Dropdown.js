@@ -4,6 +4,7 @@ import * as categoryAction from './../Action/category';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Carousel from './Carousel';
+
 import * as WomencategoryAction from './../Action/Women';
 
 class Drop extends Component {
@@ -31,11 +32,11 @@ class Drop extends Component {
 			// console.log(this.props.getCategory);
 		});
     }
-    componentWillMount = () => {
-      this.props.action.Womencategory.getWomenCategory().then(()=>{
-			console.log(this.props.getWomenCategory);
-		});
-    }
+    // componentWillMount = () => {
+    //   this.props.action.Womencategory.getWomenCategory().then(()=>{
+	// 		console.log(this.props.getWomenCategory);
+	// 	});
+    // }
     
     render() {
         let Category = ''
@@ -43,22 +44,19 @@ class Drop extends Component {
         Category=this.props.getCategory.map((Category,key) =>{
             return <div className="category">{Category.Category_name}</div>
         })
-        let WomenCategory = ''
-        WomenCategory = this.props.getWomenCategory.map((WomenCategory,key)=>{
-            return <div className="womencategory">{WomenCategory.Category_name}</div>
-        })
+        // let WomenCategory = ''
+        // WomenCategory = this.props.getWomenCategory.map((WomenCategory,key)=>{
+        //     return <div className="womencategory">{WomenCategory.Category_name}</div>
+        // })
         return (
             <div className="row">
-                <Dropdown direction="down" isOpen={this.state.btnDropup} toggle={() => { this.setState({ btnDropup: !this.state.btnDropup }); }}>
+                <Dropdown  className="dropdown" direction="down" isOpen={this.state.btnDropup} toggle={() => { this.setState({ btnDropup: !this.state.btnDropup }); }}>
                     <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "100px", padding: "8px", border: "2px white" }}>
                         Electronics
                      </DropdownToggle>
 
                     <DropdownMenu>
-
                         <h6>{Category}</h6>
-                        
-                        
                     </DropdownMenu>
                 </Dropdown>
 
@@ -67,7 +65,7 @@ class Drop extends Component {
                        Women
                  </DropdownToggle>
                     <DropdownMenu>
-                        <h5>{WomenCategory}</h5>
+                        {/* <h6>{WomenCategory}</h6> */}
 
                     </DropdownMenu>
                 </Dropdown>
