@@ -1,7 +1,7 @@
 import baseService from './baseService';
 
 export function getCategory() {
-    return baseService.get('/electronics');
+    return baseService.get('/category');
 }
 
 // export function Getcategory() {

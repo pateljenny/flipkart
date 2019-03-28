@@ -3,8 +3,8 @@ import { FAILED, GET_CATEGORY } from '../Reducer/category';
 
 export const getCategory = () => {
     return (dispatch) => {
-//  debugger;
-        categoryService.getCategory()
+        //  debugger;
+        return categoryService.getCategory()
             .then((response) => {
                 console.log(response.data);
               
@@ -16,10 +16,8 @@ export const getCategory = () => {
 
                 }
             })
-
             .catch((error) => {
                 if (error) {
-
                     dispatch({
                         type: FAILED,
                         data: { error_msg: error.response.data.error }

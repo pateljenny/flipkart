@@ -4,6 +4,7 @@ import * as categoryAction from './../Action/category';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Carousel from './Carousel';
+import * as WomencategoryAction from './../Action/Women';
 
 class Drop extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class Drop extends Component {
             dropdownOpen: false,
             modal: false,
             category: '',
-            data: ''
+            Womencategory:''
+            
         };
         this.toggle = this.toggle.bind(this);
     }
@@ -25,11 +27,26 @@ class Drop extends Component {
     }
 
     componentWillMount = () => {
-      
-        this.props.action.category.getCategory();
-        console.log(this.category);
+        this.props.action.category.getCategory().then(()=>{
+			// console.log(this.props.getCategory);
+		});
     }
+    componentWillMount = () => {
+      this.props.action.Womencategory.getWomenCategory().then(()=>{
+			console.log(this.props.getWomenCategory);
+		});
+    }
+    
     render() {
+        let Category = ''
+     
+        Category=this.props.getCategory.map((Category,key) =>{
+            return <div className="category">{Category.Category_name}</div>
+        })
+        let WomenCategory = ''
+        WomenCategory = this.props.getWomenCategory.map((WomenCategory,key)=>{
+            return <div className="womencategory">{WomenCategory.Category_name}</div>
+        })
         return (
             <div className="row">
                 <Dropdown direction="down" isOpen={this.state.btnDropup} toggle={() => { this.setState({ btnDropup: !this.state.btnDropup }); }}>
@@ -39,27 +56,23 @@ class Drop extends Component {
 
                     <DropdownMenu>
 
-                        <h5>{this.category}</h5>
-                        {/* <NavLink href="/MobileList">Mobile</NavLink>
-                        <DropdownItem> <NavLink href="/MobileList"></NavLink>Mobile</DropdownItem>
-                        <DropdownItem>Laptop</DropdownItem>
-                        <DropdownItem>Camera</DropdownItem>
-                        <DropdownItem>Mobile Accessories</DropdownItem>
-                        <DropdownItem>Home Entertainment</DropdownItem> */}
+                        <h6>{Category}</h6>
+                        
+                        
                     </DropdownMenu>
                 </Dropdown>
 
                 <Dropdown direction="down" isOpen={this.state.btnDropleft} toggle={() => { this.setState({ btnDropleft: !this.state.btnDropleft }); }}>
                     <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "180px", padding: "8px", border: "2px white" }}>
-                        TV's Appliances
+                       Women
                  </DropdownToggle>
                     <DropdownMenu>
-                        <h5>{this.category}</h5>
+                        <h5>{WomenCategory}</h5>
 
                     </DropdownMenu>
                 </Dropdown>
 
-                <Dropdown direction="down" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
+                {/* <Dropdown direction="down" isOpen={this.state.btnDropright} toggle={() => { this.setState({ btnDropright: !this.state.btnDropright }); }}>
                     <DropdownToggle caret style={{ backgroundColor: "white", color: "black", marginLeft: "180px", padding: "8px", border: "2px white" }}>
                         WoMen
                 </DropdownToggle>
@@ -67,7 +80,7 @@ class Drop extends Component {
                         <h5>{this.category}</h5>
 
                     </DropdownMenu>
-                </Dropdown>
+                </Dropdown> */}
 
 
                 <div style={{ padding: "22px" }}>
@@ -82,12 +95,15 @@ class Drop extends Component {
 const mapStateToProps = (state) => {
     return {
             getCategory: state.category,
+            getWomenCategory:state.Womencategory
+
     }
 };
 
 const mapDispatchToProps = dispatch => ({
     action: {
-        category: bindActionCreators(categoryAction, dispatch)
+        category: bindActionCreators(categoryAction, dispatch),
+        Womencategory:bindActionCreators(WomencategoryAction,dispatch)
     }
 });
 
