@@ -11,6 +11,7 @@ class Carousel extends Component {
 
         <div className="row" style={{ marginLeft: "80px", width: "180%", marginTop: "-15px" }}>
           <div className=" col-md-6">
+          
             <img className="d-block" src="http://www.ziptech.co.in/img/dell-slider-1.jpg" style={{ backgroundImage: "cover" }} alt="First slide" />
           </div>
           {/* <div className="col-sm-6">

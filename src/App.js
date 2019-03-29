@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Dashboard/Header'
-// import Signup from './SignUp/SignUp'
-import Login from './SignIn/SignIn'
-// import Modal from './SignIn/loginmodal';
+// import SignIn from './SignIn/SignIn'
+// import SignUp from './SignUp/SignUp'
+// import Mycart from './Dashboard/MyCart'
+// import XYX from './Dashboard/xyx'
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Header></Header>
-          {/* <Modal></Modal> */}
-          {/* <Route exact path="/" component={Header} /> */}
-          {/* <Route exact path="/signup" component={Signup} /> */}
-          <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/dashboard" component={Header} /> */}
+      <div>
 
-        </div>
-      </Router>
+        <Router>
+          <Header />
+          {/* <XYX></XYX> */}
+      <Switch>
+            {/* <Route path="/" component={SignIn} />
+            <Route path='/signin' component={SignIn} />
+            <Route path='/signup' component={SignUp} />
+            <Route path='/mycart' component={Mycart} /> */}
+            
+          </Switch> 
+        </Router>
+
+      </div>
+
     );
   }
 }

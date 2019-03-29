@@ -15,7 +15,7 @@ class Drop extends Component {
         this.state = {
             dropdownOpen: false,
             modal: false,
-            category: '',
+            category:'',
             Womencategory:''
             
         };
@@ -29,7 +29,7 @@ class Drop extends Component {
 
     componentWillMount = () => {
         this.props.action.category.getCategory().then(()=>{
-			// console.log(this.props.getCategory);
+			console.log(this.props.getCategory);
 		});
     }
     // componentWillMount = () => {
@@ -93,7 +93,7 @@ class Drop extends Component {
 const mapStateToProps = (state) => {
     return {
             getCategory: state.category,
-            getWomenCategory:state.Womencategory
+            // getWomenCategory:state.Womencategory
 
     }
 };
@@ -101,7 +101,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
     action: {
         category: bindActionCreators(categoryAction, dispatch),
-        Womencategory:bindActionCreators(WomencategoryAction,dispatch)
+        // Womencategory:bindActionCreators(WomencategoryAction,dispatch)
     }
 });
 

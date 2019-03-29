@@ -11,9 +11,11 @@ class Cards extends Component {
         subcategory:[]
     }
 
-    componentWillMount = () => {
-        this.props.action.subcategory.getSubCategory();
-    }
+    // componentWillMount = () => {
+    //     this.props.action.category.getCategory().then(()=>{
+	// 		// console.log(this.props.getCategory);
+	// 	});
+    // }
     render() {
         return (
             <div>
